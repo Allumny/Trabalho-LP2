@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trabalho-LP2
+namespace TrabalhoLP2
 {
     class Program
     {
@@ -63,7 +63,8 @@ namespace Trabalho-LP2
             Console.BackgroundColor = Blue;
         }
 
-            class Aluno{
+        class Aluno
+        {
 
             string nomeAluno;
             bool existeAluno = false;
@@ -126,7 +127,8 @@ namespace Trabalho-LP2
             }
         }
 
-            class Professor{
+        class Professor
+        {
 
             string nomeProf;
             bool existeProf = false;
@@ -189,7 +191,8 @@ namespace Trabalho-LP2
             }
         }
 
-            class Disciplina{
+        class Disciplina
+        {
 
             string nomeDisc;
             bool existeDisc = false;
@@ -253,7 +256,8 @@ namespace Trabalho-LP2
 
         }
 
-            class Turma{
+        class Turma
+        {
 
             string salaTurma;
             bool existeTurma = false;
