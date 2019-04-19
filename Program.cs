@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace trab_lp2_top
+namespace Trabalho-LP2
 {
     class Program
     {
