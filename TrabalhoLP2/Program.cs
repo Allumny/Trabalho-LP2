@@ -10,7 +10,7 @@ namespace TrabalhoLP2
     {
         static void Main(string[] args)
         {
-
+            {//separador das listas para reduzir a poluicão visual :)
             List<Aluno> ListAluno = new List<Aluno>();
 
             Aluno Aluno0 = new Aluno();
@@ -58,12 +58,12 @@ namespace TrabalhoLP2
             ListTurma.Add(Turma1);
             ListTurma.Add(Turma2);
             ListTurma.Add(Turma3);
-
-            Console.BackgroundColor = ConsoleColor.Blue;
+            }
+            Console.Title = "Gerenciador de matrículas v1.0";
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.Clear();
 
-            Console.WriteLine("Gerenciador de matrículas v1.0");
-            Console.WriteLine();
+            Console.WriteLine("Para alterar dados ou gerenciar {0}");
             Console.WriteLine("alunos (1)");
             Console.WriteLine("professor (2)");
             Console.WriteLine("disciplina (3)");
@@ -73,20 +73,20 @@ namespace TrabalhoLP2
             Console.WriteLine();
 
             int op1, op2, op3;
-            string respString;
-            int respInt;
+            string respOstStr;
+            int respOstInt;
 
             op1 = Convert.ToInt32(Console.ReadLine());
             if ((op1 > 4) (op1 < 0));
             {
-                Console.WriteLine("Numero invalido!");
-                Console.WriteLine("Digite sua opção: ");
-                resp1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Comando inválido.");
+                Console.WriteLine("Digite sua opcão:");
+                Console.WriteLine();
+                op1 = Convert.ToInt32(Console.ReadLine());
             }
 
             if (op1 != 0);
             {
-            
                 if (op1 == 1)//aluno
                 {
                     do
@@ -112,8 +112,8 @@ namespace TrabalhoLP2
                         Console.WriteLine();
                         Console.WriteLine("Se deseja ler, registrar ou modificar os dados de um aluno digite o numero do aluno");
                         Console.WriteLine("Para sair digite 4");
-                        Console.Write("Digite sua opção: ");
-                        resp2 = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Digite sua opcão: ");
+                        op2 = Convert.ToInt32(Console.ReadLine());
                         
 
                         if(op2 == 4)
@@ -121,98 +121,239 @@ namespace TrabalhoLP2
                             break;
                         }
 
-                            if ((resp2 >= 4) (resp2 < 0))
+                        if ((op2 >= 4) (op2 < 0))
+                        {
+                            Console.WriteLine("Comando inválido.");
+                            Console.Write("Digite sua opcão: ");
+                            op2 = Convert.ToInt32(Console.ReadLine());
+                        }
+                        else
+                        {
+                            for (int t = 0; t < 4; t++)
                             {
-                                Console.WriteLine("Numero invalido!");
-                                Console.Write("Digite o numero dele: ");
-                                resp2 = Convert.ToInt32(Console.ReadLine());
-                            }
-                            else
-                            {
-                                for (int t = 0; t < 4; t++)
+                                if (op2 == t)
                                 {
-                                    if (resp2 == t)
-                                    {
                                     if (ListAluno[t].getexisteAluno() == false)
                                     {
                                         Console.WriteLine();
-                                        Console.WriteLine("***Os dados do aluno " + t + " ainda não foram registrados***");
-                                        Console.WriteLine("Digite os dados dele-->");
+                                        Console.WriteLine("O dado " + t + " ainda não foi registrado.");
+                                        Console.WriteLine("Inserir dados novos: ");
 
-                                        Console.Write("Digite o nome do aluno: ");
-                                        respString = Console.ReadLine();
-                                        ListAluno[t].setNomeAluno(respString);
+                                        Console.Write("Nome do aluno: ");
+                                        respOstStr = Console.ReadLine();
+                                        ListAluno[t].setNomeAluno(respOstStr);
 
-                                        Console.Write("Digite o numero do aluno: ");
-                                        respInt = Convert.ToInt32(Console.ReadLine());
-                                        ListAluno[t].setNumAluno(respInt);
+                                        Console.Write("Número na chamada: ");
+                                        respOstInt = Convert.ToInt32(Console.ReadLine());
+                                        ListAluno[t].setNumAluno(respOstInt);
                                         ListAluno[t].setexisteAluno(true);
 
-                                        Console.Write("Digite a matricula do aluno: ");
-                                        respString = Console.ReadLine();
-                                        ListAluno[t].setMatAluno(respString);
+                                        Console.Write("Matrícula: ");
+                                        respOstStr = Console.ReadLine();
+                                        ListAluno[t].setMatAluno(respOstStr);
 
-                                        Console.Write("Digite a idade do aluno: ");
-                                        respInt = Convert.ToInt32(Console.ReadLine());
-                                        ListAluno[t].setIdadeAluno(respInt);
+                                        Console.Write("Idade do aluno: ");
+                                        respOstInt = Convert.ToInt32(Console.ReadLine());
+                                        ListAluno[t].setIdadeAluno(respOstInt);
 
                                     }
                                     else
                                     {
                                         Console.WriteLine();
-                                        Console.WriteLine("Dados do aluno " + t);
-                                        Console.WriteLine("Nome do aluno: " + ListAluno[t].getNomeAluno() + " ->opção(1)");
-                                        Console.WriteLine("Matricula do aluno: " + ListAluno[t].getMatAluno() + " ->opção(2)");
-                                        Console.WriteLine("Numero do aluno: " + ListAluno[t].getNumAluno() + " ->opção(3)");
-                                        Console.WriteLine("Idade do aluno: " + ListAluno[t].getIdadeAluno() + " ->opção(4)");
-                                        //continuar aqui com modificar
+                                        Console.WriteLine("Dados do aluno (" + t + "):");
+                                        Console.WriteLine("Nome do aluno: " + ListAluno[t].getNomeAluno() + " (1)");
+                                        Console.WriteLine("Numero do aluno: " + ListAluno[t].getNumAluno() + " (2)");
+                                        Console.WriteLine("Matricula do aluno: " + ListAluno[t].getMatAluno() + " (3)");
+                                        Console.WriteLine("Idade do aluno: " + ListAluno[t].getIdadeAluno() + " (4)");
 
-                                        Console.WriteLine( );
-                                        Console.WriteLine("Se deseja modificar dados de " + ListAluno[t].getNomeAluno() + ", escolha a opção do dado");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Se deseja alterar os dados de " + ListAluno[t].getNomeAluno() + ", escolha a opcão que desejar.");
                                         Console.WriteLine("Se deseja sair digite 0");
-                                        Console.WriteLine("Digite sua opção: ");
-                                        resp3 = Convert.ToInt32(Console.ReadLine());
+                                        Console.WriteLine("Digite sua opcão: ");
+                                        op3 = Convert.ToInt32(Console.ReadLine());
 
-                                        while(resp3 > 4 || resp3 < 0)
+                                        while((op3 > 4) (op3 < 0))
                                         {
-                                            Console.WriteLine("Opção invalido!");
-                                            Console.WriteLine("Digite sua opção: ");
-                                            resp3 = Convert.ToInt32(Console.ReadLine());
+                                            Console.WriteLine("Comando inválido.");
+                                            Console.WriteLine("Digite sua opcão: ");
+                                            op3 = Convert.ToInt32(Console.ReadLine());
                                         }
 
-                                        if(resp3 == 1)
+                                        if(op3 == 1)
                                         {
-                                            Console.Write("Digite o nome do aluno: ");
-                                            respString = Console.ReadLine();
-                                            ListAluno[t].setNomeAluno(respString);
-                                        }else if(resp3 == 2)
-                                        {
-                                            Console.Write("Digite a matricula do aluno: ");
-                                            respString = Console.ReadLine();
-                                            ListAluno[t].setMatAluno(respString);
-                                        }else if(resp3 == 3)
-                                        {
-                                            Console.Write("Digite o numero do aluno: ");
-                                            respInt = Convert.ToInt32(Console.ReadLine());
-                                            ListAluno[t].setNumAluno(respInt);
+                                            Console.Write("Nome do aluno: ");
+                                            respOstStr = Console.ReadLine();
+                                            ListAluno[t].setNomeAluno(respOstStr);
                                         }
-                                        else if(resp3 == 4)
+                                        else if(op3 == 2)
                                         {
-                                            Console.Write("Digite a idade do aluno: ");
-                                            respInt = Convert.ToInt32(Console.ReadLine());
-                                            ListAluno[t].setIdadeAluno(respInt);
+                                            Console.Write("Número na chamada: ");
+                                            respOstInt = Convert.ToInt32(Console.ReadLine());
+                                            ListAluno[t].setNumAluno(respOstInt);
                                         }
-
-                                    }
+                                        else if(op3 == 3)
+                                        {
+                                            Console.Write("Matrícula: ");
+                                            respOstStr = Console.ReadLine();
+                                            ListAluno[t].setMatAluno(respOstStr);
+                                        }
+                                        else if(op3 == 4)
+                                        {
+                                            Console.Write("Idade do aluno: ");
+                                            respOstInt = Convert.ToInt32(Console.ReadLine());
+                                            ListAluno[t].setIdadeAluno(respOstInt);
+                                        }
                                     }
                                 }
                             }
-                            
-                        
+                        }
                     }
-                    while (resp2 != 4);                   
+                    while (op2 != 4);                   
                 }
 
+                if (op1 == 2)//professor
+                {
+                    do
+                    {
+                        Console.WriteLine("Selecionado Aluno");
+                        Console.WriteLine();
+                        Console.WriteLine("Alunos registrados:");
+                        Console.WriteLine();
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            Console.Write("Aluno ("+ i +"): ");
+                            if (ListAluno[i].getexisteAluno() == true)
+                            {
+                                Console.WriteLine(ListAluno[i].getNomeAluno());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Dado não encontrado.");
+                            }
+                        }
+
+                        Console.WriteLine();
+                        Console.WriteLine("Se deseja ler, registrar ou modificar os dados de um aluno digite o numero do aluno");
+                        Console.WriteLine("Para sair digite 4");
+                        Console.Write("Digite sua opcão: ");
+                        op2 = Convert.ToInt32(Console.ReadLine());
+                        
+
+                        if(op2 == 4)
+                        {
+                            break;
+                        }
+
+                        if ((op2 >= 4) (op2 < 0))
+                        {
+                            Console.WriteLine("Comando inválido.");
+                            Console.Write("Digite sua opcão: ");
+                            op2 = Convert.ToInt32(Console.ReadLine());
+                        }
+                        else
+                        {
+                            for (int t = 0; t < 4; t++)
+                            {
+                                if (op2 == t)
+                                {
+                                    if (ListAluno[t].getexisteAluno() == false)
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("O dado " + t + " ainda não foi registrado.");
+                                        Console.WriteLine("Inserir dados novos: ");
+
+                                        Console.Write("Nome do aluno: ");
+                                        respOstStr = Console.ReadLine();
+                                        ListAluno[t].setNomeAluno(respOstStr);
+
+                                        Console.Write("Número na chamada: ");
+                                        respOstInt = Convert.ToInt32(Console.ReadLine());
+                                        ListAluno[t].setNumAluno(respOstInt);
+                                        ListAluno[t].setexisteAluno(true);
+
+                                        Console.Write("Matrícula: ");
+                                        respOstStr = Console.ReadLine();
+                                        ListAluno[t].setMatAluno(respOstStr);
+
+                                        Console.Write("Idade do aluno: ");
+                                        respOstInt = Convert.ToInt32(Console.ReadLine());
+                                        ListAluno[t].setIdadeAluno(respOstInt);
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("Dados do aluno (" + t + "):");
+                                        Console.WriteLine("Nome do aluno: " + ListAluno[t].getNomeAluno() + " (1)");
+                                        Console.WriteLine("Numero do aluno: " + ListAluno[t].getNumAluno() + " (2)");
+                                        Console.WriteLine("Matricula do aluno: " + ListAluno[t].getMatAluno() + " (3)");
+                                        Console.WriteLine("Idade do aluno: " + ListAluno[t].getIdadeAluno() + " (4)");
+
+                                        Console.WriteLine();
+                                        Console.WriteLine("Se deseja alterar os dados de " + ListAluno[t].getNomeAluno() + ", escolha a opcão que desejar.");
+                                        Console.WriteLine("Se deseja sair digite 0");
+                                        Console.WriteLine("Digite sua opcão: ");
+                                        op3 = Convert.ToInt32(Console.ReadLine());
+
+                                        while((op3 > 4) (op3 < 0))
+                                        {
+                                            Console.WriteLine("Comando inválido.");
+                                            Console.WriteLine("Digite sua opcão: ");
+                                            op3 = Convert.ToInt32(Console.ReadLine());
+                                        }
+
+                                        if(op3 == 1)
+                                        {
+                                            Console.Write("Nome do aluno: ");
+                                            respOstStr = Console.ReadLine();
+                                            ListAluno[t].setNomeAluno(respOstStr);
+                                        }
+                                        else if(op3 == 2)
+                                        {
+                                            Console.Write("Número na chamada: ");
+                                            respOstInt = Convert.ToInt32(Console.ReadLine());
+                                            ListAluno[t].setNumAluno(respOstInt);
+                                        }
+                                        else if(op3 == 3)
+                                        {
+                                            Console.Write("Matrícula: ");
+                                            respOstStr = Console.ReadLine();
+                                            ListAluno[t].setMatAluno(respOstStr);
+                                        }
+                                        else if(op3 == 4)
+                                        {
+                                            Console.Write("Idade do aluno: ");
+                                            respOstInt = Convert.ToInt32(Console.ReadLine());
+                                            ListAluno[t].setIdadeAluno(respOstInt);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    while (op2 != 4);                   
+                }
+
+                Console.Title = "Gerenciador de matrículas v1.0";
+                Console.BackgroundColor = ConsoleColor.DarkCyan;
+                Console.Clear();    
+                Console.WriteLine("Para alterar dados ou gerenciar {0}");
+                Console.WriteLine("alunos (1)");
+                Console.WriteLine("professor (2)");
+                Console.WriteLine("disciplina (3)");
+                Console.WriteLine("turma (4)");
+                Console.WriteLine("sair (0)");
+                Console.WriteLine("Selecione a sua opcão:");
+                Console.WriteLine();
+
+                op1 = Convert.ToInt32(Console.ReadLine());
+                while (op1 > 4 || op1 < 0)
+                {
+                    Console.WriteLine("Numero invalido!");
+                    Console.WriteLine("Digite sua opção: ");
+                    resp1 = Convert.ToInt32(Console.ReadLine());
+                }
             }
 
 
@@ -227,7 +368,6 @@ namespace TrabalhoLP2
             string matAluno;
             int idadeAluno;
 
-            //metodos para nome do aluno
             public void setNomeAluno(string VarNomeAluno)
             {
                 this.nomeAluno = VarNomeAluno;
@@ -238,7 +378,7 @@ namespace TrabalhoLP2
                 return nomeAluno;
             }
 
-            public void setexisteAluno(bool VarexisteAluno)//verificar se nome existe
+            public void setexisteAluno(bool VarexisteAluno)
             {
                 this.existeAluno = VarexisteAluno;
             }
@@ -248,7 +388,6 @@ namespace TrabalhoLP2
                 return existeAluno;
             }
 
-            //metodos para numero do aluno
             public void setNumAluno(int VarNumAluno)
             {
                 this.numAluno = VarNumAluno;
@@ -259,7 +398,6 @@ namespace TrabalhoLP2
                 return numAluno;
             }
 
-            //metodos para matricula do aluno
             public void setMatAluno(string VarMatAluno)
             {
                 this.matAluno = VarMatAluno;
@@ -270,7 +408,6 @@ namespace TrabalhoLP2
                 return matAluno;
             }
 
-            //metodos para idade do aluno
             public void setIdadeAluno(int VarIdadeAluno)
             {
                 this.idadeAluno = VarIdadeAluno;
