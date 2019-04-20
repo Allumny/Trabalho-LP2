@@ -63,7 +63,7 @@ namespace TrabalhoLP2
             Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.Clear();
 
-            Console.WriteLine("Para alterar dados ou gerenciar {0}");
+            Console.WriteLine("Para alterar dados ou gerenciar");
             Console.WriteLine("alunos (1)");
             Console.WriteLine("professor (2)");
             Console.WriteLine("disciplina (3)");
@@ -426,9 +426,8 @@ namespace TrabalhoLP2
             bool existeProf = false;
             int idadeProf;
             string mateProf;
-            int quantTempAulaProf;//quantos tempos de aula por dia que o professor dar(a quantidade é igual todos o dias)
+            int quantTempAulaProf;
 
-            //metodos para nome do professor
             public void setNomeProf(string VarNomeProf)
             {
                 this.nomeProf = VarNomeProf;
@@ -439,7 +438,7 @@ namespace TrabalhoLP2
                 return nomeProf;
             }
 
-            public void setexisteProf(bool VarexisteProf)//verificar se nome existe
+            public void setexisteProf(bool VarexisteProf)
             {
                 this.existeProf = VarexisteProf;
             }
@@ -449,7 +448,6 @@ namespace TrabalhoLP2
                 return existeProf;
             }
 
-            //metodos para materia do professor
             public void setMateProf(string VarMateProf)
             {
                 this.mateProf = VarMateProf;
@@ -460,7 +458,6 @@ namespace TrabalhoLP2
                 return mateProf;
             }
 
-            //metodos para quantos tempos de aula do professor
             public void setQuantTempAulaProf(int VarQuantTempAulaProf)
             {
                 this.quantTempAulaProf = VarQuantTempAulaProf;
@@ -471,7 +468,6 @@ namespace TrabalhoLP2
                 return quantTempAulaProf;
             }
 
-            //metodos para idade do professor
             public void setIdadeProf(int VarIdadeProf)
             {
                 this.idadeProf = VarIdadeProf;
@@ -489,10 +485,9 @@ namespace TrabalhoLP2
             string nomeDisc;
             bool existeDisc = false;
             string nomeCoordDisc;
-            int tempAulaDisc;//tempo de aula necessaria a ser ensinado por semana
-            bool aulaTodoDiaDisc;//se é obrigatorio ter aula todo dia dessa disciplina
+            int tempAulaDisc;
+            bool aulaTodoDiaDisc;
 
-            //metodos para nome do disciplina
             public void setNomeDisc(string VarNomeDisc)
             {
                 this.nomeDisc = VarNomeDisc;
@@ -503,7 +498,7 @@ namespace TrabalhoLP2
                 return nomeDisc;
             }
 
-            public void setexisteDisc(bool VarexisteDisc)//verificar se nome existe
+            public void setexisteDisc(bool VarexisteDisc)
             {
                 this.existeDisc = VarexisteDisc;
             }
@@ -513,7 +508,6 @@ namespace TrabalhoLP2
                 return existeDisc;
             }
 
-            //metodos para nome do coodernador da disciplina
             public void setNomeCoordDisc(string VarNomeCoordDisc)
             {
                 this.nomeCoordDisc = VarNomeCoordDisc;
@@ -524,7 +518,6 @@ namespace TrabalhoLP2
                 return nomeCoordDisc;
             }
 
-            //metodos para quantos tempos necessaria a ser ensinado por semana 
             public void setTempAulaDisc(int VarTempAulaDisc)
             {
                 this.tempAulaDisc = VarTempAulaDisc;
@@ -535,7 +528,6 @@ namespace TrabalhoLP2
                 return tempAulaDisc;
             }
 
-            //metodos para se deve ter aula todo dia
             public void setAulaTodoDiaDisc(bool VarAulaTodoDiaDisc)
             {
                 this.aulaTodoDiaDisc = VarAulaTodoDiaDisc;
@@ -555,9 +547,8 @@ namespace TrabalhoLP2
             bool existeTurma = false;
             int numTurma;
             int quantAlunTurma;
-            int quantTempAulaTurma;//quantos tempos de aula por dia (a quantidade é igual todos o dias)
+            int quantTempAulaTurma;
 
-            //metodos para sala da turma
             public void setSalaTurma(string VarSalaTurma)
             {
                 this.salaTurma = VarSalaTurma;
@@ -568,7 +559,7 @@ namespace TrabalhoLP2
                 return salaTurma;
             }
 
-            public void setexisteTurma(bool VarexisteTurma)//verificar se nome existe
+            public void setexisteTurma(bool VarexisteTurma)
             {
                 this.existeTurma = VarexisteTurma;
             }
@@ -578,7 +569,6 @@ namespace TrabalhoLP2
                 return existeTurma;
             }
 
-            //metodos para numero da turma
             public void setNumTurma(int VarNumTurma)
             {
                 this.numTurma = VarNumTurma;
@@ -589,7 +579,6 @@ namespace TrabalhoLP2
                 return numTurma;
             }
 
-            //metodos para quantos alunos tem na turma
             public void setQuantAlunTurma(int VarQuantAlunTurma)
             {
                 this.quantAlunTurma = VarQuantAlunTurma;
@@ -600,7 +589,6 @@ namespace TrabalhoLP2
                 return quantAlunTurma;
             }
 
-            //metodos para quantos tempos de aula a turma tem por dia
             public void setQuantTempAulaTurma(int VarQuantTempAulaTurma)
             {
                 this.quantTempAulaTurma = VarQuantTempAulaTurma;
