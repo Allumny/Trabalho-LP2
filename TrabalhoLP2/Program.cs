@@ -215,17 +215,17 @@ namespace TrabalhoLP2
                 {
                     do
                     {
-                        Console.WriteLine("Selecionado Aluno");
+                        Console.WriteLine("Selecionado Professor");
                         Console.WriteLine();
-                        Console.WriteLine("Alunos registrados:");
+                        Console.WriteLine("Professores registrados:");
                         Console.WriteLine();
 
                         for (int i = 0; i < 4; i++)
                         {
-                            Console.Write("Aluno ("+ i +"): ");
-                            if (ListAluno[i].getexisteAluno() == true)
+                            Console.Write("Professor ("+ i +"): ");
+                            if (ListProfessor[i].getexisteProfessor() == true)
                             {
-                                Console.WriteLine(ListAluno[i].getNomeAluno());
+                                Console.WriteLine(ListProfessor[i].getNomeProfessor());
                             }
                             else
                             {
@@ -234,7 +234,7 @@ namespace TrabalhoLP2
                         }
 
                         Console.WriteLine();
-                        Console.WriteLine("Se deseja ler, registrar ou modificar os dados de um aluno digite o numero do aluno");
+                        Console.WriteLine("Se deseja ler, registrar ou modificar os dados de um professor digite o numero do mesmo");
                         Console.WriteLine("Para sair digite 4");
                         Console.Write("Digite sua opcão: ");
                         op2 = Convert.ToInt32(Console.ReadLine());
@@ -257,15 +257,15 @@ namespace TrabalhoLP2
                             {
                                 if (op2 == t)
                                 {
-                                    if (ListAluno[t].getexisteAluno() == false)
+                                    if (ListProfessor[t].getexisteProfessor() == false)
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine("O dado " + t + " ainda não foi registrado.");
                                         Console.WriteLine("Inserir dados novos: ");
 
-                                        Console.Write("Nome do aluno: ");
+                                        Console.Write("Nome do professor: ");
                                         respOstStr = Console.ReadLine();
-                                        ListAluno[t].setNomeAluno(respOstStr);
+                                        ListProfessor[t].setNomeProfessor(respOstStr);
 
                                         Console.Write("Número na chamada: ");
                                         respOstInt = Convert.ToInt32(Console.ReadLine());
