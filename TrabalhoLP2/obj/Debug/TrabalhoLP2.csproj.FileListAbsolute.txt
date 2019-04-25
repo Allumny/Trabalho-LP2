@@ -9,3 +9,5 @@ C:\Users\pedra\Desktop\PROGRAMACAO\C#\Trabalho-LP2\Trabalho-LP2\TrabalhoLP2\obj\
 C:\Users\pedra\Desktop\PROGRAMACAO\C#\Trabalho-LP2\Trabalho-LP2\TrabalhoLP2\obj\Debug\TrabalhoLP2.csproj.CoreCompileInputs.cache
 C:\Users\pedra\Desktop\PROGRAMACAO\C#\Trabalho-LP2\Trabalho-LP2\TrabalhoLP2\obj\Debug\TrabalhoLP2.exe
 C:\Users\pedra\Desktop\PROGRAMACAO\C#\Trabalho-LP2\Trabalho-LP2\TrabalhoLP2\obj\Debug\TrabalhoLP2.pdb
+C:\Users\labcaxias\Desktop\xampp\htdocs\Trabalho-LP2\TrabalhoLP2\obj\Debug\TrabalhoLP2.exe
+C:\Users\labcaxias\Desktop\xampp\htdocs\Trabalho-LP2\TrabalhoLP2\obj\Debug\TrabalhoLP2.pdb

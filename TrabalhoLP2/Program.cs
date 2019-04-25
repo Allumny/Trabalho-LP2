@@ -60,7 +60,7 @@ namespace TrabalhoLP2
             ListTurma.Add(Turma3);
             }
             Console.Title = "Gerenciador de matrículas v1.0";
-            Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
 
             Console.WriteLine("Para alterar dados ou gerenciar");
@@ -87,8 +87,10 @@ namespace TrabalhoLP2
 
             if (op1 != 0);
             {
-                //aluno
-                if (op1 == 1)
+                break;
+            }
+            //aluno
+            if (op1 == 1)
                 {
                     do
                     {
@@ -211,8 +213,8 @@ namespace TrabalhoLP2
                     }
                     while (op2 != 4);                   
                 }
-                //professor
-                if (op1 == 2)
+            //professor
+            if (op1 == 2)
                 {
                     do
                     {
@@ -335,8 +337,8 @@ namespace TrabalhoLP2
                     }
                     while (op2 != 4);                   
                 }
-                //disciplina
-                if (op1 == 3)
+            //disciplina
+            if (op1 == 3)
                 {
                     do
                     {
@@ -396,7 +398,7 @@ namespace TrabalhoLP2
                                     Console.WriteLine("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
                                     respOstInt = Convert.ToInt32(Console.ReadLine());
                                     while (respOstInt != 0 || respOstInt != 0){
-                                        Console.WriteLine("Numero invalido!");
+                                        Console.WriteLine("Comando inválido.");
                                         Console.Write("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
                                         respOstInt = Convert.ToInt32(Console.ReadLine());
                                     }
@@ -454,7 +456,7 @@ namespace TrabalhoLP2
                                         respOstInt = Convert.ToInt32(Console.ReadLine());
                                         while (respOstInt != 0 || respOstInt != 0)
                                         {
-                                            Console.WriteLine("Numero invalido!");
+                                            Console.WriteLine("Comando inválido.");
                                             Console.Write("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
                                             respOstInt = Convert.ToInt32(Console.ReadLine());
                                         }
@@ -478,8 +480,8 @@ namespace TrabalhoLP2
                         }
                     } while (op2 != 4);
                 }
-                //turma
-                if (op1 == 4)
+            //turma
+            if (op1 == 4)
                 {
                     do
                     {
@@ -509,8 +511,8 @@ namespace TrabalhoLP2
 
                         while (op2 > 4 || op2 < 0)
                         {
-                            Console.WriteLine("Numero invalido!");
-                            Console.WriteLine("Digite o numero da opção do dela: ");
+                            Console.WriteLine("Comando inválido.");
+                            Console.WriteLine("Digite o numero da opção: ");
                             op2 = Convert.ToInt32(Console.ReadLine());
                         }
 
@@ -598,7 +600,7 @@ namespace TrabalhoLP2
 
 
                 Console.Title = "Gerenciador de matrículas v1.0";
-                Console.BackgroundColor = ConsoleColor.DarkCyan;
+                Console.BackgroundColor = ConsoleColor.White;
                 Console.Clear();    
                 Console.WriteLine("Para alterar dados ou gerenciar {0}");
                 Console.WriteLine("alunos (1)");
@@ -612,11 +614,11 @@ namespace TrabalhoLP2
                 op1 = Convert.ToInt32(Console.ReadLine());
                 while (op1 > 4 || op1 < 0)
                 {
-                    Console.WriteLine("Numero invalido!");
+                    Console.WriteLine("Comando inválido.");
                     Console.WriteLine("Digite sua opção: ");
                     resp1 = Convert.ToInt32(Console.ReadLine());
                 }
-            }
+            
 
 
         }
