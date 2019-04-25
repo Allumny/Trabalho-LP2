@@ -87,7 +87,8 @@ namespace TrabalhoLP2
 
             if (op1 != 0);
             {
-                if (op1 == 1)//aluno
+                //aluno
+                if (op1 == 1)
                 {
                     do
                     {
@@ -99,7 +100,7 @@ namespace TrabalhoLP2
                         for (int i = 0; i < 4; i++)
                         {
                             Console.Write("Aluno ("+ i +"): ");
-                            if (ListAluno[i].getexisteAluno() == true)
+                            if (ListAluno[i].getExisteAluno() == true)
                             {
                                 Console.WriteLine(ListAluno[i].getNomeAluno());
                             }
@@ -133,7 +134,7 @@ namespace TrabalhoLP2
                             {
                                 if (op2 == t)
                                 {
-                                    if (ListAluno[t].getexisteAluno() == false)
+                                    if (ListAluno[t].getExisteAluno() == false)
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine("O dado " + t + " ainda não foi registrado.");
@@ -146,7 +147,7 @@ namespace TrabalhoLP2
                                         Console.Write("Número na chamada: ");
                                         respOstInt = Convert.ToInt32(Console.ReadLine());
                                         ListAluno[t].setNumAluno(respOstInt);
-                                        ListAluno[t].setexisteAluno(true);
+                                        ListAluno[t].setExisteAluno(true);
 
                                         Console.Write("Matrícula: ");
                                         respOstStr = Console.ReadLine();
@@ -210,8 +211,8 @@ namespace TrabalhoLP2
                     }
                     while (op2 != 4);                   
                 }
-
-                if (op1 == 2)//professor
+                //professor
+                if (op1 == 2)
                 {
                     do
                     {
@@ -257,7 +258,7 @@ namespace TrabalhoLP2
                             {
                                 if (op2 == t)
                                 {
-                                    if (ListProfessor[t].getexisteProfessor() == false)
+                                    if (ListProfessor[t].getExisteProfessor() == false)
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine("O dado " + t + " ainda não foi registrado.");
@@ -267,31 +268,30 @@ namespace TrabalhoLP2
                                         respOstStr = Console.ReadLine();
                                         ListProfessor[t].setNomeProfessor(respOstStr);
 
-                                        Console.Write("Número na chamada: ");
+                                        Console.Write("Número de Aulas por semana: ");
                                         respOstInt = Convert.ToInt32(Console.ReadLine());
-                                        ListAluno[t].setNumAluno(respOstInt);
-                                        ListAluno[t].setexisteAluno(true);
+                                        ListProfessor[t].setNumProfessor(respOstInt);
+                                        ListProfessor[t].setExisteProfessor(true);
 
                                         Console.Write("Matrícula: ");
                                         respOstStr = Console.ReadLine();
-                                        ListAluno[t].setMatAluno(respOstStr);
+                                        ListProfessor[t].setMatProfessor(respOstStr);
 
-                                        Console.Write("Idade do aluno: ");
+                                        Console.Write("Idade do professor: ");
                                         respOstInt = Convert.ToInt32(Console.ReadLine());
-                                        ListAluno[t].setIdadeAluno(respOstInt);
+                                        ListProfessor[t].setIdadeProfessor(respOstInt);
 
                                     }
                                     else
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine("Dados do aluno (" + t + "):");
-                                        Console.WriteLine("Nome do aluno: " + ListAluno[t].getNomeAluno() + " (1)");
-                                        Console.WriteLine("Numero do aluno: " + ListAluno[t].getNumAluno() + " (2)");
-                                        Console.WriteLine("Matricula do aluno: " + ListAluno[t].getMatAluno() + " (3)");
-                                        Console.WriteLine("Idade do aluno: " + ListAluno[t].getIdadeAluno() + " (4)");
+                                        Console.WriteLine("Número de Aulas por semana: " + ListProfessor[t].getNumProfessor() + " (2)");
+                                        Console.WriteLine("Matricula: " + ListProfessor[t].getMatProfessor() + " (3)");
+                                        Console.WriteLine("Idade do professor: " + ListProfessor[t].getIdadeProfessor() + " (4)");
 
                                         Console.WriteLine();
-                                        Console.WriteLine("Se deseja alterar os dados de " + ListAluno[t].getNomeAluno() + ", escolha a opcão que desejar.");
+                                        Console.WriteLine("Se deseja alterar os dados de " + ListProfessor[t].getNomeProfessor() + ", escolha a opcão que desejar.");
                                         Console.WriteLine("Se deseja sair digite 0");
                                         Console.WriteLine("Digite sua opcão: ");
                                         op3 = Convert.ToInt32(Console.ReadLine());
@@ -305,21 +305,21 @@ namespace TrabalhoLP2
 
                                         if(op3 == 1)
                                         {
-                                            Console.Write("Nome do aluno: ");
+                                            Console.Write("Nome do professor: ");
                                             respOstStr = Console.ReadLine();
-                                            ListAluno[t].setNomeAluno(respOstStr);
+                                            ListProfessor[t].setNomeProfessor(respOstStr);
                                         }
                                         else if(op3 == 2)
                                         {
-                                            Console.Write("Número na chamada: ");
+                                            Console.Write("Número de Aulas por semana: ");
                                             respOstInt = Convert.ToInt32(Console.ReadLine());
-                                            ListAluno[t].setNumAluno(respOstInt);
+                                            ListProfessor[t].setNumProfessor(respOstInt);
                                         }
                                         else if(op3 == 3)
                                         {
                                             Console.Write("Matrícula: ");
                                             respOstStr = Console.ReadLine();
-                                            ListAluno[t].setMatAluno(respOstStr);
+                                            ListProfessor[t].setMatProfessor(respOstStr);
                                         }
                                         else if(op3 == 4)
                                         {
@@ -334,6 +334,267 @@ namespace TrabalhoLP2
                     }
                     while (op2 != 4);                   
                 }
+                //disciplina
+                if (op1 == 3)
+                {
+                    do
+                    {
+                        Console.WriteLine("Selecionado Disciplina");
+                        Console.WriteLine();
+                        Console.WriteLine("Disciplinas registradas:");
+                        Console.WriteLine();
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            Console.Write("Disciplina " + i + ": ");
+                            if (ListDisciplina[i].getExisteDisciplina() == true)
+                            {
+                                Console.WriteLine(ListDisciplina[i].getNomeDisciplina());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Dado não encontrado.");
+                            }
+                        }
+
+                        Console.WriteLine();
+                        Console.WriteLine("Se desejar ler, registrar ou modificar os dados de uma Disciplina digite o numero da mesma");
+                        Console.WriteLine("Para sair digite 4");
+                        Console.Write("Digite sua opcão: ");
+                        op2 = Convert.ToInt32(Console.ReadLine());
+
+                        while (op2 > 4 || op2 < 0)
+                        {
+                            Console.WriteLine("Numero inválido.");
+                            Console.WriteLine("Digite sua opcão: ");
+                            op2 = Convert.ToInt32(Console.ReadLine());
+                        }
+
+                        if (op2 == 4)
+                        {
+                            break;
+                        }
+
+                        for (int t = 0; t < 4; t++)
+                        {
+                            if (op2 == t)
+                            {
+                                if (ListDisciplina[t].getExisteDisciplina() == false)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Os dados da Disciplina " + t + " ainda não foram registrados");
+                                    Console.WriteLine("Digite as novas informacões");
+
+                                    Console.Write("Digite o nome da disciplina: ");
+                                    ListDisciplina[t].setNomeDisciplina(Console.ReadLine());
+
+                                    Console.Write("Digite o nome do professor coodernador: ");
+                                    ListDisciplina[t].setNomeCoordDisciplina(Console.ReadLine());
+
+                                    Console.Write("Digite se é obrigatorio ter aula todo dia dessa disciplina: ");
+                                    Console.WriteLine("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
+                                    respOstInt = Convert.ToInt32(Console.ReadLine());
+                                    while (respOstInt != 0 || respOstInt != 0){
+                                        Console.WriteLine("Numero invalido!");
+                                        Console.Write("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
+                                        respOstInt = Convert.ToInt32(Console.ReadLine());
+                                    }
+                                    if(respOstInt == 1)
+                                    {
+                                        ListDisciplina[t].setAulaTodoDiaDisciplina(true);
+                                    }
+                                    else
+                                    {
+                                        ListDisciplina[t].setAulaTodoDiaDisciplina(false);
+                                    }
+
+                                    Console.Write("Digite quantos tempos são dados por semana: ");
+                                    ListDisciplina[t].setTempAulaDisciplina(Convert.ToInt32(Console.ReadLine()));
+
+                                    ListDisciplina[t].setexisteDisciplina(true);
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Dados da disciplina " + t);
+                                    Console.WriteLine("Nome da disciplina: " + ListDisciplina[t].getNomeDisciplina() + " opcão 1");
+                                    Console.WriteLine("Nome do professor coodernador: " + ListDisciplina[t].getNomeCoordDisciplina() + " opcão 2");
+                                    Console.WriteLine("Aula todo dia: " + ListDisciplina[t].getAulaTodoDiaDisciplina() + " opcão 3");
+                                    Console.WriteLine("Quantos tempos são dados por semana: " + ListDisciplina[t].getTempAulaDisciplina() + " opcão 4");
+
+                                    Console.WriteLine();
+                                    Console.WriteLine("Se deseja modificar dados de " + ListDisciplina[t].getNomeDisciplina() + ", escolha a opção do dado");
+                                    Console.WriteLine("Se deseja sair digite 0");
+                                    Console.WriteLine("Digite sua opcão: ");
+                                    op3 = Convert.ToInt32(Console.ReadLine());
+
+                                    while (op3 > 4 || op3 < 0)
+                                    {
+                                        Console.WriteLine("Opção inválida.");
+                                        Console.WriteLine("Digite sua opcão: ");
+                                        op3 = Convert.ToInt32(Console.ReadLine());
+                                    }
+
+                                    if (op3 == 1)
+                                    {
+                                        Console.Write("Digite o nome da disciplina: ");
+                                        ListDisciplina[t].setNomeDisciplina(Console.ReadLine());
+                                    }
+                                    else if (op3 == 2)
+                                    {
+                                        Console.Write("Digite o nome do professor coodernador: ");
+                                        ListDisciplina[t].setNomeCoordDisciplina(Console.ReadLine());
+                                    }
+                                    else if (op3 == 3)
+                                    {
+                                        Console.Write("Digite se é obrigatorio ter aula todo dia dessa disciplina: ");
+                                        Console.WriteLine("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
+                                        respOstInt = Convert.ToInt32(Console.ReadLine());
+                                        while (respOstInt != 0 || respOstInt != 0)
+                                        {
+                                            Console.WriteLine("Numero invalido!");
+                                            Console.Write("Digite 1 para obrigatorio, ou 0 para não obrigatorio: ");
+                                            respOstInt = Convert.ToInt32(Console.ReadLine());
+                                        }
+                                        if (respOstInt == 1)
+                                        {
+                                            ListDisciplina[t].setAulaTodoDiaDisciplina(true);
+                                        }
+                                        else
+                                        {
+                                            ListDisciplina[t].setAulaTodoDiaDisciplina(false);
+                                        }
+                                    }
+                                    else if (op3 == 4)
+                                    {
+                                        Console.Write("Digite quantos tempos são dados por semana: ");
+                                        ListDisciplina[t].setTempAulaDisciplina(Convert.ToInt32(Console.ReadLine()));
+                                    }
+
+                                }
+                            }
+                        }
+                    } while (op2 != 4);
+                }
+                //turma
+                if (op1 == 4)
+                {
+                    do
+                    {
+                        Console.WriteLine("Selecionado Turma");
+                        Console.WriteLine();
+                        Console.WriteLine("Turmas registradas:");
+                        Console.WriteLine();
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            Console.Write("Turma " + i + ": ");
+                            if (ListTurma[i].getExisteTurma() == true)
+                            {
+                                Console.WriteLine(ListTurma[i].getNumTurma());
+                            }
+                            else
+                            {
+                                Console.WriteLine("não registrado");
+                            }
+                        }
+
+                        Console.WriteLine();
+                        Console.WriteLine("Se deseja ler, registrar ou modificar os dados de uma turma digite o numero da opcão da mesma");
+                        Console.WriteLine("Se deseja sair digite 4");
+                        Console.Write("Digite a opcão: ");
+                        op2 = Convert.ToInt32(Console.ReadLine());
+
+                        while (op2 > 4 || op2 < 0)
+                        {
+                            Console.WriteLine("Numero invalido!");
+                            Console.WriteLine("Digite o numero da opção do dela: ");
+                            op2 = Convert.ToInt32(Console.ReadLine());
+                        }
+
+                        if (op2 == 4)
+                        {
+                            break;
+                        }
+
+                        for (int t = 0; t < 4; t++)
+                        {
+                            if (op2 == t)
+                            {
+                                if (ListTurma[t].getExisteTurma() == false)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Os dados da turma " + t + " ainda não foram registrados");
+                                    Console.WriteLine("Digite os dados dela");
+
+                                    Console.Write("Digite o numero da turma: ");
+                                    ListTurma[t].setNumTurma(Convert.ToInt32(Console.ReadLine()));
+
+                                    Console.Write("Digite o numero de alunos: ");
+                                    ListTurma[t].setQuantAlunTurma(Convert.ToInt32(Console.ReadLine()));
+
+                                    Console.Write("Digite a sala da turma: ");
+                                    ListTurma[t].setSalaTurma(Console.ReadLine());
+
+                                    Console.Write("Digite quantos tempos de aula a turma tem por dia: ");
+                                    ListTurma[t].setQuantTempAulaTurma(Convert.ToInt32(Console.ReadLine()));
+
+                                    ListTurma[t].setExisteTurma(true);
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Dados da turma " + t );
+                                    Console.WriteLine("Numero da turma: " + ListTurma[t].getNumTurma() + " opcão 1");
+                                    Console.WriteLine("Numero de alunos: " + ListTurma[t].getQuantAlunTurma() + " opcão 2");
+                                    Console.WriteLine("Sala da turma: " + ListTurma[t].getSalaTurma() + " opcão 3");
+                                    Console.WriteLine("Quantos tempos de aula a turma tem por dia: " + ListTurma[t].getQuantTempAulaTurma() + " opcão 4");
+
+                                    Console.WriteLine();
+                                    Console.WriteLine("Se deseja modificar dados de " + ListTurma[t].getNumTurma() + ", escolha a opcão do dado");
+                                    Console.WriteLine("Se deseja sair digite 0");
+                                    Console.WriteLine("Digite sua opcão: ");
+                                    op3 = Convert.ToInt32(Console.ReadLine());
+
+                                    while (op3 > 4 || op3 < 0)
+                                    {
+                                        Console.WriteLine("Opcão invalida.");
+                                        Console.WriteLine("Digite sua opcão: ");
+                                        op3 = Convert.ToInt32(Console.ReadLine());
+                                    }
+
+                                    if (op3 == 1)
+                                    {
+
+                                        Console.Write("Digite o numero da turma: ");
+                                        ListTurma[t].setNumTurma(Convert.ToInt32(Console.ReadLine()));
+                                    }
+                                    else if (op3 == 2)
+                                    {
+                                        Console.Write("Digite o numero de alunos: ");
+                                        ListTurma[t].setQuantAlunTurma(Convert.ToInt32(Console.ReadLine()));
+                                    }
+                                    else if (op3 == 3)
+                                    {
+                                        Console.Write("Digite a sala da turma: ");
+                                        ListTurma[t].setSalaTurma(Console.ReadLine());
+                                    }
+                                    else if (op3 == 4)
+                                    {
+                                        Console.Write("Digite quantos tempos de aula a turma tem por dia: ");
+                                        ListTurma[t].setQuantTempAulaTurma(Convert.ToInt32(Console.ReadLine()));
+                                    }
+
+                                }
+                            }
+                        }
+
+
+                    } while (op2 != 4);
+                }
+
 
                 Console.Title = "Gerenciador de matrículas v1.0";
                 Console.BackgroundColor = ConsoleColor.DarkCyan;
@@ -378,12 +639,12 @@ namespace TrabalhoLP2
                 return nomeAluno;
             }
 
-            public void setexisteAluno(bool VarexisteAluno)
+            public void setExisteAluno(bool VarExisteAluno)
             {
-                this.existeAluno = VarexisteAluno;
+                this.existeAluno = VarExisteAluno;
             }
 
-            public bool getexisteAluno()
+            public bool getExisteAluno()
             {
                 return existeAluno;
             }
@@ -422,120 +683,120 @@ namespace TrabalhoLP2
         class Professor
         {
 
-            string nomeProf;
-            bool existeProf = false;
-            int idadeProf;
-            string mateProf;
-            int quantTempAulaProf;
+            string nomeProfessor;
+            bool existeProfessor = false;
+            int idadeProfessor;
+            string matProfessor;
+            int numProfessor;
 
-            public void setNomeProf(string VarNomeProf)
+            public void setNomeProfessor(string VarNomeProfessor)
             {
-                this.nomeProf = VarNomeProf;
+                this.nomeProfessor = VarNomeProfessor;
             }
 
-            public string getNomeProf()
+            public string getNomeProfessor()
             {
-                return nomeProf;
+                return nomeProfessor;
             }
 
-            public void setexisteProf(bool VarexisteProf)
+            public void setExisteProfessor(bool VarExisteProfessor)
             {
-                this.existeProf = VarexisteProf;
+                this.existeProfessor = VarExisteProfessor;
             }
 
-            public bool getexisteProf()
+            public bool getExisteProfessor()
             {
-                return existeProf;
+                return existeProfessor;
             }
 
-            public void setMateProf(string VarMateProf)
+            public void setMatProfessor(string VarMatProfessor)
             {
-                this.mateProf = VarMateProf;
+                this.matProfessor = VarMatProfessor;
             }
 
-            public string getMateProf()
+            public string getMatProfessor()
             {
-                return mateProf;
+                return matProfessor;
             }
 
-            public void setQuantTempAulaProf(int VarQuantTempAulaProf)
+            public void setNumProfessor(int VarNumProfessor)
             {
-                this.quantTempAulaProf = VarQuantTempAulaProf;
+                this.numProfessor = VarNumProfessor;
             }
 
-            public int getQuantTempAulaProf()
+            public int getNumProfessor()
             {
-                return quantTempAulaProf;
+                return numProfessor;
             }
 
-            public void setIdadeProf(int VarIdadeProf)
+            public void setIdadeProfessor(int VarIdadeProfessor)
             {
-                this.idadeProf = VarIdadeProf;
+                this.idadeProfessor = VarIdadeProfessor;
             }
 
-            public int getIdadeProf()
+            public int getIdadeProfessor()
             {
-                return idadeProf;
+                return idadeProfessor;
             }
         }
 
         class Disciplina
         {
 
-            string nomeDisc;
-            bool existeDisc = false;
-            string nomeCoordDisc;
-            int tempAulaDisc;
-            bool aulaTodoDiaDisc;
+            string nomeDisciplina;
+            bool existeDisciplina = false;
+            string nomeCoordDisciplina;
+            int tempAulaDisciplina;
+            bool aulaTodoDiaDisciplina;
 
-            public void setNomeDisc(string VarNomeDisc)
+            public void setNomeDisciplina(string VarNomeDisciplina)
             {
-                this.nomeDisc = VarNomeDisc;
+                this.nomeDisciplina = VarNomeDisciplina;
             }
 
-            public string getNomeDisc()
+            public string getNomeDisciplina()
             {
-                return nomeDisc;
+                return nomeDisciplina;
             }
 
-            public void setexisteDisc(bool VarexisteDisc)
+            public void setexisteDisciplina(bool VarexisteDisciplina)
             {
-                this.existeDisc = VarexisteDisc;
+                this.existeDisciplina = VarexisteDisciplina;
             }
 
-            public bool getexisteDisc()
+            public bool getExisteDiscipina()
             {
-                return existeDisc;
+                return existeDisciplina;
             }
 
-            public void setNomeCoordDisc(string VarNomeCoordDisc)
+            public void setNomeCoordDisciplina(string VarNomeCoordDisciplina)
             {
-                this.nomeCoordDisc = VarNomeCoordDisc;
+                this.nomeCoordDisciplina = VarNomeCoordDisciplina;
             }
 
-            public string getNomeCoordDisc()
+            public string getNomeCoordDisciplina()
             {
-                return nomeCoordDisc;
+                return nomeCoordDisciplina;
             }
 
-            public void setTempAulaDisc(int VarTempAulaDisc)
+            public void setTempAulaDisciplina(int VarTempAulaDisciplina)
             {
-                this.tempAulaDisc = VarTempAulaDisc;
+                this.tempAulaDisciplina = VarTempAulaDisciplina;
             }
 
-            public int getTempAulaDisc()
+            public int getTempAulaDisciplina()
             {
-                return tempAulaDisc;
+                return tempAulaDisciplina;
             }
 
-            public void setAulaTodoDiaDisc(bool VarAulaTodoDiaDisc)
+            public void setAulaTodoDiaDisciplina(bool VarAulaTodoDiaDisciplina)
             {
-                this.aulaTodoDiaDisc = VarAulaTodoDiaDisc;
+                this.aulaTodoDiaDisciplina = VarAulaTodoDiaDisciplina;
             }
 
-            public bool getAulaTodoDiaDisc()
+            public bool getAulaTodoDiaDisciplina()
             {
-                return aulaTodoDiaDisc;
+                return aulaTodoDiaDisciplina;
             }
 
         }
@@ -559,12 +820,12 @@ namespace TrabalhoLP2
                 return salaTurma;
             }
 
-            public void setexisteTurma(bool VarexisteTurma)
+            public void setExisteTurma(bool VarExisteTurma)
             {
-                this.existeTurma = VarexisteTurma;
+                this.existeTurma = VarExisteTurma;
             }
 
-            public bool getexisteTurma()
+            public bool getExisteTurma()
             {
                 return existeTurma;
             }
