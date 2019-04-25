@@ -286,6 +286,7 @@ namespace TrabalhoLP2
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine("Dados do aluno (" + t + "):");
+                                        Console.WriteLine("Nome do professor: " + ListProfessor[t].getNomeProfessor() + " (1)");
                                         Console.WriteLine("Número de Aulas por semana: " + ListProfessor[t].getNumProfessor() + " (2)");
                                         Console.WriteLine("Matricula: " + ListProfessor[t].getMatProfessor() + " (3)");
                                         Console.WriteLine("Idade do professor: " + ListProfessor[t].getIdadeProfessor() + " (4)");
